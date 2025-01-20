@@ -1,0 +1,65 @@
+/* Container for all restaurant boxes */
+.restaurant-container {
+  display: grid; /* Use CSS Grid for layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 boxes per row by default */
+  gap: 20px; /* Space between boxes */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Individual restaurant box */
+.restaurant-box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Style for the image */
+.restaurant-image {
+  width: 100%; /* Ensure the image fills the box width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the area */
+}
+
+/* Style for restaurant info */
+.restaurant-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.restaurant-info h3 {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.restaurant-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+/* Responsive layout adjustments */
+@media (min-width: 1200px) {
+  .restaurant-container {
+    grid-template-columns: repeat(5, 1fr); /* 5 boxes per row on larger screens */
+  }
+}
+
+@media (max-width: 1199px) {
+  .restaurant-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 boxes per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 boxes per row on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-container {
+    grid-template-columns: 1fr; /* 1 box per row on very small screens */
+  }
+}
